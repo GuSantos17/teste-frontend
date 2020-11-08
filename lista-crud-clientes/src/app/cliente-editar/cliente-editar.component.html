@@ -1,0 +1,36 @@
+<div>
+  <h3>Editar Cliente</h3>
+</div>
+  <form class="example-container" [formGroup]="clientForm" (ngSubmit)="updateCliente(clientForm.value)">
+    <mat-form-field>
+      <input matInput placeholder="Nome do cliente" formControlName="nome"/>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Data de Nascimento" formControlName="data_nascimento">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Sexo" formControlName="sexo">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="Cep" formControlName="cep">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="Endereco" formControlName="endereco">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="Numero" formControlName="numero">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="Complemento" formControlName="complemento">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="Bairro" formControlName="bairro">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="Cidade" formControlName="cidade">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="Estado" formControlName="estado">
+    </mat-form-field>
+    <button type="submit" [disabled]="!clientForm.valid" mat-button color="primary" >Editar</button>
+</form>
