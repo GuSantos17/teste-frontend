@@ -1,0 +1,39 @@
+<div class="example-container mat-elevation-z8">
+    <div class="example-loading-shade"
+         *ngIf="isLoadingResults">
+      <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+    </div>
+    <div class="button-row">
+      <button mat-flat-button color="accent" [routerLink]="['/clientes']"><mat-icon>list</mat-icon> Voltar</button>
+    </div>
+    <mat-card class="example-card">
+      <mat-card-content>
+        <dl>
+          <dt>Nome:</dt>
+          <dd>{{cliente.nome}}</dd>
+          <dt>Sexo:</dt>
+          <dd>{{cliente.sexo}}</dd>
+          <dt>Data de Nascimento:</dt>
+          <dd>{{cliente.data_nascimento}}</dd>
+          <dt>Cep:</dt>
+          <dd>{{cliente.cep}}</dd>
+          <dt>Endereco:</dt>
+          <dd>{{cliente.endereco}}</dd>
+          <dt>Numero:</dt>
+          <dd>{{cliente.numero}}</dd>
+          <dt>Complemento:</dt>
+          <dd>{{cliente.complemento}}</dd>
+          <dt>Bairro:</dt>
+          <dd>{{cliente.bairro}}</dd>
+          <dt>Cidade:</dt>
+          <dd>{{cliente.cidade}}</dd>
+          <dt>Estado:</dt>
+          <dd>{{cliente.estado}}</dd>
+        </dl>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-flat-button color="primary" class="teste" [routerLink]="['/cliente-editar/', cliente.id_cliente]"><mat-icon>edit</mat-icon> Editar</button>
+        <button mat-flat-button color="warn" (click)="deleteCliente(cliente.id_cliente)"><mat-icon>delete</mat-icon> Excluir</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>

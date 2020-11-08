@@ -1,0 +1,37 @@
+<div>
+    <h3>Adicionar Novo Cliente</h3>
+</div>
+  <form class="example-container" [formGroup]="clientForm" (ngSubmit)="addCliente(clientForm.value)">
+    <mat-form-field>
+      <input matInput name="nome" placeholder="Nome do cliente" formControlName="nome">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput name="data_nascimento" placeholder="Data de Nascimento" formControlName="data_nascimento">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput name="sexo" placeholder="Sexo" formControlName="sexo">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput name="cep" placeholder="Cep" formControlName="cep" (blur)="getCep(clientForm.get('cep'))">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput name="endereco" placeholder="Endereco" formControlName="endereco">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput name="numero" placeholder="Numero" formControlName="numero">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput name="complemento" placeholder="Complemento" formControlName="complemento">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput name="bairro" placeholder="Bairro" formControlName="bairro">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput name="cidade" placeholder="Cidade" formControlName="cidade">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput name="estado" placeholder="Estado" formControlName="estado">
+    </mat-form-field>
+
+    <button type="submit" [disabled]="!clientForm.valid" mat-button color="primary" >Adicionar</button>
+  </form>
